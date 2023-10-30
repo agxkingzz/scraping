@@ -19,10 +19,9 @@ selector = Selector(text=html)
 product_containers = selector.xpath('//li[contains(@class, "product-item")]')
 print(f"using {proxy}")
 for product in product_containers:
-    try:
-        
+    try:       
         name = product.xpath('.//a[@data-test="product-title"]/text()').get()
-        price = product.xpath('.//span[@data-test="price"]/text()').get('')
+        price = product.xpath('.//meta[@itemprop="price"]/@content').get()
         link = product.xpath('.//a[@data-test="product-title"]/@href').get()
         author = product.xpath('.//a[@itemprop="name"]/text()').get()
         category = product.xpath('//p[@data-test="breadcrumb-name"]/text()').get()
@@ -35,4 +34,3 @@ for product in product_containers:
         continue
 #print(html)
 f.close()
-
