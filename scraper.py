@@ -30,7 +30,7 @@ for product in product_containers:
         rating = product.xpath('.//div[@class="star-rating"]/@title').get()
         pid = product.xpath('.//wsp-comparable/@data-product-id').get()
         print(f"\nRatings: {rating.strip()}({amount_of_ratings})\nCategory: {category.strip()}\nAuthor: {author.strip()}\nName: {name.strip()} PID: {pid.strip()}\nPrice: €{price.strip()}\nURL: https://bol.com{link.strip()}\n")
-        #f.write(f"\nRatings: {rating.strip()}({amount_of_ratings})\nCategory: {category.strip()}\nAuthor: {author.strip()}\nName: {name.strip()} PID: {pid.strip()}\nPrice: €{price.strip()}\nURL: https://bol.com{link.strip()}\n")
+        f.write(f"\nRatings: {rating.strip()}({amount_of_ratings})\nCategory: {category.strip()}\nAuthor: {author.strip()}\nName: {name.strip()} PID: {pid.strip()}\nPrice: €{price.strip()}\nURL: https://bol.com{link.strip()}\n")
     except:
         continue
 #print(html)
